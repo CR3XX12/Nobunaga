@@ -43,7 +43,9 @@ ATeam8_FinalCOMP217Character::ATeam8_FinalCOMP217Character()
 
 	state = ECharacterState::E_Default;
 	invincibilityTime = 1.0f;
+	
 	health = 3;
+	numCoins = 0;
 }
 
 
@@ -118,4 +120,9 @@ void ATeam8_FinalCOMP217Character::BeginInvincibiltyTimer()
 void ATeam8_FinalCOMP217Character::EndInvincibiltyTimer()
 {
 	state = ECharacterState::E_Default;
+}
+
+void ATeam8_FinalCOMP217Character::AddCoins(int _numToAdd)
+{
+	numCoins += _numToAdd;
 }

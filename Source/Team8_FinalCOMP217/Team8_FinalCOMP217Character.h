@@ -57,6 +57,9 @@ public:
 
 	void EndInvincibiltyTimer();
 
+	UFUNCTION(BlueprintCallable)
+		void AddCoins(int _numToAdd);
+
 	ECharacterState state;
 
 	FTimerHandle invincibiltyTimer;
@@ -65,6 +68,8 @@ public:
 	float invincibilityTime;
 
 	int health;
+
+	int numCoins;
 
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
