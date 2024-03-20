@@ -69,6 +69,7 @@ public:
 
 	int health;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int numCoins;
 
 	/** Returns SideViewCameraComponent subobject **/
