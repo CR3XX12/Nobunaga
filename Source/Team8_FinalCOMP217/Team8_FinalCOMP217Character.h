@@ -10,7 +10,8 @@ UENUM(BlueprintType)
 enum class ECharacterState : uint8
 {
 	E_Default UMETA(DisplayName = "DEFAULT"),
-	E_Invincible UMETA(DisplayName = "INVINCIBLE")
+	E_Invincible UMETA(DisplayName = "INVINCIBLE"),
+	E_PwUpPickup_i UMETA(DisplayName = "PWUPINVINCIBLE")
 
 };
 
@@ -58,11 +59,21 @@ public:
 	void EndInvincibiltyTimer();
 
 	UFUNCTION(BlueprintCallable)
-		void AddCoins(int _numToAdd);
+	void AddCoins(int _numToAdd);
 
+	UFUNCTION(BlueprintCallable)
+	void StartInvincibleState(float _pwinvincibleTime);
+
+	void EndInvincibleState();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	ECharacterState state;
 
 	FTimerHandle invincibiltyTimer;
+
+	FTimerHandle PWUPInvincibleTimer;
+
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float invincibilityTime;

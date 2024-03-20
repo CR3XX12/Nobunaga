@@ -26,12 +26,24 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere) 
 	EPickupType type;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Pickup Properties")
+	float RotationSpeed;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Pickup Properties")
+	float FloatAmplitude;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Pickup Properties")
+	float FloatSpeed;
 
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;	
+
+private:
+	float RunningTime;
 
 };

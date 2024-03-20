@@ -82,7 +82,7 @@ void ATeam8_FinalCOMP217Character::TouchStopped(const ETouchIndex::Type FingerIn
 
 void ATeam8_FinalCOMP217Character::TakeDamage(int _damageAmount, bool _hitOnLeft)
 {	
-	if (state != ECharacterState::E_Invincible)
+	if (state != ECharacterState::E_Invincible && state != ECharacterState::E_PwUpPickup_i)
 	{
 		if (health - _damageAmount < 0)
 		{
@@ -125,4 +125,16 @@ void ATeam8_FinalCOMP217Character::EndInvincibiltyTimer()
 void ATeam8_FinalCOMP217Character::AddCoins(int _numToAdd)
 {
 	numCoins += _numToAdd;
+}
+
+void ATeam8_FinalCOMP217Character::StartInvincibleState(float _pwinvincibleTime)
+{
+	state = ECharacterState::E_PwUpPickup_i;
+	GetWorld()->GetTimerManager().SetTimer(PWUPInvincibleTimer, this, &ATeam8_FinalCOMP217Character::EndInvincibiltyTimer, _pwinvincibleTime, false);
+
+}
+
+void ATeam8_FinalCOMP217Character::EndInvincibleState()
+{
+	state = ECharacterState::E_Default;
 }
