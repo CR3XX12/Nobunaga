@@ -66,6 +66,9 @@ public:
 
 	void EndInvincibleState();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void UpdateHealthIcons();
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	ECharacterState state;
 
@@ -78,6 +81,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float invincibilityTime;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int health;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)

@@ -84,6 +84,7 @@ void ATeam8_FinalCOMP217Character::TakeDamage(int _damageAmount, bool _hitOnLeft
 {	
 	if (state != ECharacterState::E_Invincible && state != ECharacterState::E_PwUpPickup_i)
 	{
+		//Stop the Health from going negative
 		if (health - _damageAmount < 0)
 		{
 			health = 0;
@@ -102,6 +103,7 @@ void ATeam8_FinalCOMP217Character::TakeDamage(int _damageAmount, bool _hitOnLeft
 				LaunchCharacter(FVector(0.0f, 800.0f, 700.0f), false, false);
 			}
 		}
+		UpdateHealthIcons();
 	}
 }
 
