@@ -12,6 +12,7 @@ enum class EEnemyState : uint8
 	E_Default UMETA(DisplayName = "DEFAULT"),
 	E_Invincible UMETA(DisplayName = "INVINCIBLE")
 
+
 };
 
 UCLASS()
@@ -52,5 +53,8 @@ public:
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int health;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		bool IsFacingLeft;
 
 };

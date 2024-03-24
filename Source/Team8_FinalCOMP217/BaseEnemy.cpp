@@ -12,6 +12,7 @@ ABaseEnemy::ABaseEnemy()
 	state = EEnemyState::E_Default;
 	invincibilityTime = 1.0f;
 	health = 1;
+	IsFacingLeft = false;
 
 }
 
