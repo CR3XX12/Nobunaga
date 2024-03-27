@@ -87,7 +87,8 @@ void ATeam8_FinalCOMP217Character::TakeDamage(int _damageAmount, bool _hitOnLeft
 		//Stop the Health from going negative
 		if (health - _damageAmount < 0)
 		{
-			health = 0;
+			health = 3;
+			UpdateHealthIcons();
 			Die();
 		}
 		else {
@@ -109,7 +110,20 @@ void ATeam8_FinalCOMP217Character::TakeDamage(int _damageAmount, bool _hitOnLeft
 
 void ATeam8_FinalCOMP217Character::Die()
 {
-	Destroy();
+	Respawn();
+	
+}
+
+void ATeam8_FinalCOMP217Character::Respawn()
+{
+	health = 3;
+	numCoins = 0;
+	state = ECharacterState::E_Default;
+
+	FVector SpawnLocation = FVector(1200.f, 7193.f, 204.f);
+	SetActorLocation(SpawnLocation);
+
+	UpdateHealthIcons();
 }
 
 void ATeam8_FinalCOMP217Character::BeginInvincibiltyTimer()

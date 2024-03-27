@@ -54,6 +54,10 @@ public:
 	void Die();
 
 	UFUNCTION(BlueprintCallable)
+	void Respawn();
+
+
+	UFUNCTION(BlueprintCallable)
 	void BeginInvincibiltyTimer();
 
 	void EndInvincibiltyTimer();
