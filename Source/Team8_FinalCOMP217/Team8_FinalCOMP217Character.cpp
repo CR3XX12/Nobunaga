@@ -123,7 +123,7 @@ void ATeam8_FinalCOMP217Character::Respawn()
 	FVector SpawnLocation = FVector(1200.f, 7193.f, 204.f);
 	SetActorLocation(SpawnLocation);
 
-	UpdateHealthIcons();
+	
 }
 
 void ATeam8_FinalCOMP217Character::BeginInvincibiltyTimer()
